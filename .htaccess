@@ -1,0 +1,13 @@
+DirectoryIndex shabbat.php index.php index.html index.htm
+<IfModule mod_rewrite.c>
+Options -MultiViews
+RewriteEngine On
+
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule \.(js|css|jpeg|jpg|gif|png|ico|map|webp)(\?|$) /404error.php [L,NC]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
